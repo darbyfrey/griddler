@@ -28,8 +28,8 @@ module Griddler::EmailParser
     if body.blank?
       ""
     else
-      remove_reply_portion(body)
-        .split(/[\r]*\n/)
+      # remove_reply_portion(body)
+      body.split(/[\r]*\n/)
         .reject do |line|
           line =~ /^[[:space:]]+>/ ||
             line =~ /^[[:space:]]*Sent from my /
